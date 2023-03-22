@@ -1,0 +1,8 @@
+function periodIsLate(last, today, cycleLength) {
+    let differenceNorm = cycleLength * 24 * 3600 * 1000;
+    let differenceReal = today.getTime() - last.getTime();
+    if (differenceReal > differenceNorm) {
+        return true;
+    }
+    return false;
+}
