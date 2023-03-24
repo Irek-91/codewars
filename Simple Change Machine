@@ -1,0 +1,23 @@
+function changeMe(moneyIn) {
+    if (moneyIn === '20p') {
+        return '10p 10p';
+        }
+    const change = [];
+    const obj = {'£5': 500, '£2': 200, '£1': 100, '50p': 50, '20p': 20}; //распределяем номиналы купюр
+    let remaining = obj[moneyIn]; //создаем массив из принятых купюр
+    
+    if (!remaining) return moneyIn; // если нет купюр с номиналами из массива, возвращаем
+
+    while (remaining > 0) {
+        if (remaining >= 20) {
+        change.push('20p');
+        remaining -= 20;
+        } else {
+        change.push('10p');
+        remaining -= 10;
+        }
+    }
+
+    console.log(change.join(' ')); // преобразуем массив в строку с пробелами между позициями
+    return change.join(' ');
+}
