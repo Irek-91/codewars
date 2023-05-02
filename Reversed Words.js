@@ -1,6 +1,8 @@
-function reverseWords(str){
-    let newStrArry = str.split(' ');
-    let StrArry = newStrArry.reverse();
-    return StrArry.join(' ');
+function reverseWords(str) {
+let resultArr = [];
+let strArr = str.split(' ');
+for (i = 0; i < strArr.length; i++) {
+    resultArr.push(strArr[i].split('').reverse().join(''))
+    }
+return resultArr.join(' ');
 }
-reverseWords("yoda doesn't speak like this" )
